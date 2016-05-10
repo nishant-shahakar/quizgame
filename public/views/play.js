@@ -120,8 +120,8 @@ gameApp.controller('play', function($scope,$state,$rootScope,$http,$window) {
 		socket.emit('gameCounter',JSON.stringify(obj));
 	};
 	$scope.newgame =function(){
-		//$window.location.href="/game";
-		$state.go('dashboard');
+		$window.location.href="/game";
+		//$state.go('dashboard');
 	}
 
 });	

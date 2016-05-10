@@ -72,13 +72,8 @@ var reqGame =function(data) {
             pub.publish('Game:'+data.gameName,obj);
 }
 var allowGame =function(data) {
-            if(this.handshake.session.user){
-                var user = JSON.parse(this.handshake.session.user);
-                if(!user.host){
-                    console.log("403 close socket");
-                    
-                    return;
-                }
+            if(!this.handshake.session.user){
+                return;
             }    
             var data = JSON.parse(data);
             var obj = JSON.stringify({
@@ -90,6 +85,7 @@ var allowGame =function(data) {
 }
 var joinGame =function(data) {
             if(!this.handshake.session.user){
+                    console.log("joinGame 403 close socket");
                 
                 return;
             }
