@@ -1,0 +1,29 @@
+{
+	"mongo":"mongodb://127.0.0.1:27017/game",
+	"redis":{
+		"ip":"",
+		"port":""
+	},
+	"que":[
+        {
+            "que":"1+2?",
+            "queId":1,
+            "options":["3","4"]            
+        },
+        {
+            "que":"2-2?",
+            "queId":2,
+            "options":["0","4"]
+        }
+	],
+	"ans":[
+    {
+        "queId":1,
+        "ans":"3"
+    },
+    {
+        "queId":2,
+        "ans":"0"
+    }
+	]	
+}

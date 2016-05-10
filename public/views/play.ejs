@@ -1,0 +1,49 @@
+<div class="container" ng-controller="play" >
+                <div class="col-md-6">
+                    <div class="box" ng-show="!gameStatus &&!gameEnd">
+                        <h2 ng-show="user.host">Waiting for players to join</h2>
+                        <h2 ng-show="!user.host">Waiting for host to start the game</h2>
+                        <div ng-show="user.host && start">
+                            <h3 >Waiting for more players ? or now you can start playing </h3>
+                            <button class="btn-primary" ng-click="startGame()">start</button>
+                        </div>    
+                    </div>
+                    <h4 ng-show="!gameStatus &&!gameEnd">{{msg}}</h4>
+                    <div ng-show="gameEnd">
+                        <h2>{{winner}}</h2>
+                        <button class="btn-primary" ng-click="newgame()">New game</button>
+
+                    </div>
+                    <div ng-show="gameStatus">
+                               <h5>Answer before other players gets the right answer, correct ans=+3 ,wrong ans =-3</h5>                        
+                               <h6>Your Score:{{score}}</h6>                        
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2>{{crrQue.que}}</h2>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="quiz" data-toggle="buttons">
+
+                                            <label class="btn btn-labeled btn-default btn-block" ng-repeat ="option in crrQue.options track by $index" ng-click="checkans(option)">
+                                                <span class="btn-label"><i class="glyphicon"></i></span>{{ $index +1}}.  {{option}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <span id="answer"></span>
+                                        <!-- hide close button, hide when correct choice only! -->
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="box">
+                        <h1>Number of players in game</h1>
+                        <ul class="list-group">
+                          <li class="list-group-item" ng-repeat="player in players">{{player.replace('Game:'+user.gameName+':','')}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>

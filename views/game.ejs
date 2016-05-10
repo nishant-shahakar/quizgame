@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="controllers/app.js"></script>
+  <script src="views/dashboard.js"></script>
+  <script src="views/play.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+  socket = io.connect('http://'+window.location.host,{
+            reconnect: false,
+            'try multiple transports': false
+        });
+  </script>
+</head>
+
+<body ng-app="gameApp">
+
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">Quiz</a>
+			    </div>
+			    <div class="col-sm-3 col-md-3 pull-right" >
+					<form class="navbar-form" role="search">
+					<div class="input-group">
+						<!-- <input type="text" ng-model="appId" class="form-control" placeholder="Set App-ID" name="srch-term" id="srch-term"> -->
+						<div class="input-group-btn">
+							<a  href="/logout" class="btn btn-default" ><i class="glyphicon glyphicon-log-out"></i></a>
+						</div>
+					</div>
+					</form>
+				</div>
+			  </div>
+			</nav>
+            <div class="view-container">
+                <div class="view" ui-view></div>
+            </div>    
+
+            <!-- /.container -->
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+	"mongo":"mongodb://127.0.0.1:27017/game",
+	"redis":{
+		"ip":"",
+		"port":""
+	},
+	"que":[
+        {
+            "que":"Which of the following statement is valid to use a Node module http in a Node based application?",
+            "queId":1,
+            "options":["var http = require('http');","var http = import('http');","package http;","import http;"]            
+        },
+        {
+            "que":"Which of the following is true about readable stream?",
+            "queId":2,
+            "options":["Readable stream is used for read operation.","Output of readable stream can be input to a writable stream.","option 1 & 2","none"]
+        },
+        {
+            "que":"Which of the following module is required for network specific operations?",
+            "queId":3,
+            "options":["fs module","os module","net module","none"]
+        }
+
+	],
+	"ans":[
+    {
+        "queId":1,
+        "ans":"var http = require('http');"
+    },
+    {
+        "queId":2,
+        "ans":"option 1 & 2"
+    },
+    {
+        "queId":3,
+        "ans":"net module"
+    }
+	]	
+}

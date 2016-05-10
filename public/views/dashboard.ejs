@@ -1,0 +1,33 @@
+<div class="container" ng-controller="dashboard" >
+                <div class="col-md-6">
+                    <div class="box">
+                        <h1>Create Game</h1>
+
+                        <p class="lead"></p>
+
+                        <hr>
+
+                        <form >
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" ng-model="gameName" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" ng-click="createGame()" ng-disabled="!gameName.length" class="btn btn-primary"><i class="fa fa-user-md"></i>Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="box">
+                        <h1>Available Games</h1>
+                        <p class="lead"></p>
+                        <hr>
+                        <div class="list-group">
+                          <button class="list-group-item" ng-repeat="game in quiz.games" ng-click="gameSelect(game.replace('Game:',''))">{{game.replace('Game:','')}}</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
